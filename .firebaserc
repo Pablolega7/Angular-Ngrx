@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ngrx-firebase-ce167": {
+      "hosting": {
+        "App": [
+          "ngrx-firebase-ce167"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ngrx-firebase-ce167"
+  }
+}
