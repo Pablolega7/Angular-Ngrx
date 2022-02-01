@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {  Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from '@angular/fire/auth';
 import { Firestore, doc, getFirestore, setDoc } from '@angular/fire/firestore';
+import { getDoc } from 'firebase/firestore';
+import { DocumentData } from 'rxfire/firestore/interfaces';
 import { CredentialsModel } from '../models/credentials.models';
 import { UserModel } from '../models/user.models';
 
@@ -36,5 +38,10 @@ export class AthService {
   logout(){
 
     this.auth.signOut();
+  };
+
+  async  getUserData(id: string): Promise<DocumentData>{
+    const docSnap = await getDoc(doc(getFirestore(), "users", id));
+    return docSnap.exists() ? docSnap.data() : null!
   };
 };

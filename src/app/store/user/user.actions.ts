@@ -24,7 +24,13 @@ export enum Types {
 
     SETUSER_DATA         = '[User State], setUserData',
     SETUSER_DATA_SUCCESS = '[User State], setUserData: Success',
-    SETUSER_DATA_ERROR   = '[User State], setUserData: Error'
+    SETUSER_DATA_ERROR   = '[User State], setUserData: Error',
+
+    //GET USER DATA//
+
+    GETUSER_DATA         = '[User State], getUserData',
+    GETUSER_DATA_SUCCESS = '[User State], getUserData: Success',
+    GETUSER_DATA_ERROR   = '[User State], getUserData: Error'
 };
 
 //LOGIN//
@@ -46,3 +52,8 @@ export const registerError  = createAction( Types.REGISTER_ERROR, props<{ error:
 export const setUserdata       = createAction( Types.SETUSER_DATA, props<{ user:UserModel }>());
 export const setUserDataSucces = createAction( Types.SETUSER_DATA_SUCCESS);
 export const setUserDataError  = createAction( Types.SETUSER_DATA_ERROR, props<{ error:any }>());
+
+// GET USER DATA//
+export const getUserdata       = createAction( Types.GETUSER_DATA, props<{ id: string }>());
+export const getUserDataSucces = createAction( Types.GETUSER_DATA_SUCCESS, props<{ user: UserModel }>());
+export const getUserDataError  = createAction( Types.GETUSER_DATA_ERROR, props<{ error:any }>());

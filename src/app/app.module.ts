@@ -26,6 +26,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MAIN_REDUCER } from './main.reducer';
+import { UserEffects } from './store/user/user.effects';
 
 
 @NgModule({
@@ -47,7 +48,7 @@ import { MAIN_REDUCER } from './main.reducer';
     provideDatabase(() => getDatabase()),
     provideDatabase(() => getDatabase()),
     StoreModule.forRoot(MAIN_REDUCER),
-    // EffectsModule.forRoot([UserEffects]),
+    EffectsModule.forRoot([UserEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 100, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode

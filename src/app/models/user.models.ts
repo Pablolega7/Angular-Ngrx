@@ -12,11 +12,12 @@ export interface UserModel {
 
 export class User implements UserModel {
 
-    surname : string = '';
-    birthDay: string = '';
-    img     : string = '';
-
     constructor(
-        public email: string, public name: string, public id: string
+        public email   : string, 
+        public name    : string, 
+        public id      : string, 
+        public surname : string, 
+        public birthDay: string, 
+        public img     : string
     ){}
 };
